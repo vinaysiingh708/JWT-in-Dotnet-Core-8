@@ -1,36 +1,16 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using ExtenstionMethods.ExtensionMethods;
+using jwt_token.Services.Implementation;
+using jwt_token.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-// Add JWT Authentication
-var key = Encoding.ASCII.GetBytes("ThisIsASecretKeyForJwtTokenGeneration"); // Ensure the key is at least 32 bytes
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = "http://yourdomain.com",
-        ValidAudience = "http://youraudience.com",
-        IssuerSigningKey = new SymmetricSecurityKey(key)
-    };
-});
+// Add JWT authentication using the extension method
+builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddSingleton<IJwtService, JwtService>();
 
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -43,11 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

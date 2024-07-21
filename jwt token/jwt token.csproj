@@ -13,4 +13,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ExtenstionMethods\jwt token.ExtenstionMethods.csproj" />
+    <ProjectReference Include="..\jwt token.Services\jwt token.Services.csproj" />
+  </ItemGroup>
+
 </Project>

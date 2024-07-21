@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jwt token", "jwt token\jwt token.csproj", "{FFE2765B-0498-40C8-BBAE-4E68501BAB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jwt token", "jwt token\jwt token.csproj", "{FFE2765B-0498-40C8-BBAE-4E68501BAB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jwt token.ExtenstionMethods", "ExtenstionMethods\jwt token.ExtenstionMethods.csproj", "{BD39DB9B-A2B8-4E26-966B-8EACFCE2EEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jwt token.Services", "jwt token.Services\jwt token.Services.csproj", "{1F447A32-7295-47BC-BA43-6613FDFEB7A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FFE2765B-0498-40C8-BBAE-4E68501BAB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFE2765B-0498-40C8-BBAE-4E68501BAB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFE2765B-0498-40C8-BBAE-4E68501BAB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD39DB9B-A2B8-4E26-966B-8EACFCE2EEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD39DB9B-A2B8-4E26-966B-8EACFCE2EEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD39DB9B-A2B8-4E26-966B-8EACFCE2EEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD39DB9B-A2B8-4E26-966B-8EACFCE2EEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F447A32-7295-47BC-BA43-6613FDFEB7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F447A32-7295-47BC-BA43-6613FDFEB7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F447A32-7295-47BC-BA43-6613FDFEB7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F447A32-7295-47BC-BA43-6613FDFEB7A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
